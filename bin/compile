@@ -3,6 +3,11 @@
 
 set -eo pipefail
 
+echo "Aung"
+echo "$build-dir"
+echo "$cache-dir"
+echo "$env-dir"
+
 TOOL=""
 YELLOW='\033[1;33m'
 RED='\033[1;31m'
