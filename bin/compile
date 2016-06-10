@@ -339,6 +339,11 @@ case $TOOL in
         ls -l $build
         ls -l $build/include/rocksdb
         ls -l $build/native/lib
+        
+        ldconfig -p
+        
+        ld -lrocksdb --verbose
+        
         echo "Aung - Done"
 
         unset GIT_DIR # unset git dir or it will mess with goinstall
