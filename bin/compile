@@ -12,8 +12,16 @@ echo $2
 echo "Aung - Env Dir"
 echo $3
 
-echo "Aung - ls"
+echo "Aung - pwd & ls"
+pwd
 ls
+
+cd app
+ls
+
+cd ..
+
+echo "Aung - Done"
 
 TOOL=""
 YELLOW='\033[1;33m'
@@ -150,8 +158,8 @@ then
     done
 fi
 
-export CGO_CFLAGS="/home/vcap/app/include"
-export CGO_LDFLAGS="/home/vcap/app/native/lib/librocksdb.so"
+#export CGO_CFLAGS="/home/vcap/app/include"
+#export CGO_LDFLAGS="/home/vcap/app/native/lib/librocksdb.so"
 
 if test -f "$build/Godeps/Godeps.json"
 then
