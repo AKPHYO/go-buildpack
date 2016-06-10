@@ -156,7 +156,7 @@ fi
 
 export CGO_CFLAGS="-I/tmp/app/include"
 export CGO_LDFLAGS="-L/tmp/app/native/lib"
-export CGO_LDFLAGS="-lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
+export CGO_LDFLAGS="-llibrocksdb.so -llibstdc++.so.6 -llibm.so -llibz.so -llibbz2.so -llibsnappy.so"
 
 if test -f "$build/Godeps/Godeps.json"
 then
