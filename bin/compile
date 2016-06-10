@@ -337,6 +337,8 @@ case $TOOL in
         
         echo "Aung - NativeVendoring"
         ls -l $build
+        ls -l $build/include/rocksdb
+        ls -l $build/native/lib
         echo "Aung - Done"
 
         unset GIT_DIR # unset git dir or it will mess with goinstall
