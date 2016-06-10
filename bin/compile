@@ -147,6 +147,9 @@ then
     done
 fi
 
+export CGO_CFLAGS="-I/home/vcap/app/include"
+export CGO_LDFLAGS="-l/home/vcap/app/native/lib/librocksdb.so"
+
 if test -f "$build/Godeps/Godeps.json"
 then
     TOOL="godep"
