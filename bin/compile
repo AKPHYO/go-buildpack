@@ -4,9 +4,9 @@
 set -eo pipefail
 
 echo "Aung - Compile"
-echo $build-dir
-echo $cache-dir
-echo $env-dir
+echo $1
+echo $2
+echo $3
 
 pwd 
 
