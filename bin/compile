@@ -334,6 +334,10 @@ case $TOOL in
             fi
         ;;
         esac
+        
+        echo "Aung - NativeVendoring"
+        ls
+        echo "Aung - Done"
 
         unset GIT_DIR # unset git dir or it will mess with goinstall
         cd $p
