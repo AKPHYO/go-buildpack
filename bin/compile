@@ -340,8 +340,6 @@ case $TOOL in
         ls -l $build/include/rocksdb
         ls -l $build/native/lib
         
-        ldconfig -p
-        
         ld -lrocksdb --verbose
         
         echo "Aung - Done"
