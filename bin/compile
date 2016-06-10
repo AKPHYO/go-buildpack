@@ -154,8 +154,8 @@ fi
 #export CGO_CFLAGS="/home/vcap/app/include"
 #export CGO_LDFLAGS="/home/vcap/app/native/lib/librocksdb.so"
 
-export CGO_CFLAGS="-I/home/vcap/app/include"
-export CGO_LDFLAGS="-L/home/vcap/app/native/lib"
+export CGO_CFLAGS="-I/tmp/app/include"
+export CGO_LDFLAGS="-L/tmp/app/native/lib"
 export CGO_LDFLAGS="-lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
 if test -f "$build/Godeps/Godeps.json"
