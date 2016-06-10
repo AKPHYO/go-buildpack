@@ -127,10 +127,13 @@ finished() {
 # allow apps to specify cgo flags and set up /app symlink so things like CGO_CFLAGS=-I/app/... work
 if [ ! -z "$env_dir" ]
 then
+    echo "Aung 1"
     mkdir -p "$env_dir"
     env_dir=$(cd "$env_dir/" && pwd)
   for key in CGO_CFLAGS CGO_CPPFLAGS CGO_CXXFLAGS CGO_LDFLAGS GO_LINKER_SYMBOL GO_LINKER_VALUE GO15VENDOREXPERIMENT GOVERSION
     do
+        echo "Aung --"
+        echo $key
         echo "$env_dir/$key"
         if [ -f "$env_dir/$key" ]
         then
@@ -139,6 +142,8 @@ then
         fi
     done
 fi
+
+echo "Aung 2"
 
 if test -f "$build/Godeps/Godeps.json"
 then
