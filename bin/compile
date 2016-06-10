@@ -140,7 +140,8 @@ then
     echo "Aung - 2"
     echo $env_dir
     pwd
-    ls
+    echo $CGO_CFLAGS
+    echo $CGO_CGO_LDFLAGS
     mkdir -p "$env_dir"
     env_dir=$(cd "$env_dir/" && pwd)
   for key in CGO_CFLAGS CGO_CPPFLAGS CGO_CXXFLAGS CGO_LDFLAGS GO_LINKER_SYMBOL GO_LINKER_VALUE GO15VENDOREXPERIMENT GOVERSION
