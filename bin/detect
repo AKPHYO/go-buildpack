@@ -2,6 +2,9 @@
 # bin/detect <build-dir>
 set -e
 
+echo "Aung - detect"
+echo "$build-dir"
+
 build=$(cd "$1/" && pwd)
 
 if test -f "$build/Godeps/Godeps.json" ||
