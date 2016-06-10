@@ -3,15 +3,6 @@
 
 set -eo pipefail
 
-echo "Aung - Compile"
-echo $1
-echo $2
-echo $3
-
-pwd 
-
-ls
-
 TOOL=""
 YELLOW='\033[1;33m'
 RED='\033[1;31m'
@@ -135,13 +126,7 @@ finished() {
 
 # allow apps to specify cgo flags and set up /app symlink so things like CGO_CFLAGS=-I/app/... work
 if [ ! -z "$env_dir" ]
-    echo "Aung - 1"
 then
-    echo "Aung - 2"
-    echo $env_dir
-    pwd
-    echo $CGO_CFLAGS
-    echo $CGO_CGO_LDFLAGS
     mkdir -p "$env_dir"
     env_dir=$(cd "$env_dir/" && pwd)
   for key in CGO_CFLAGS CGO_CPPFLAGS CGO_CXXFLAGS CGO_LDFLAGS GO_LINKER_SYMBOL GO_LINKER_VALUE GO15VENDOREXPERIMENT GOVERSION
