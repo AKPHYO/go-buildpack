@@ -12,7 +12,7 @@ echo $2
 echo "Aung - Env Dir"
 echo $3
 
-echo "Aung - pwd & ls"
+echo "Aung - pwd"
 pwd
 echo "Aung - Done"
 
@@ -336,6 +336,9 @@ case $TOOL in
         esac
         
         echo "Aung - NativeVendoring"
+        ls
+        cd app
+        pwd
         ls
         echo "Aung - Done"
 
