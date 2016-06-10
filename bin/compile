@@ -155,8 +155,8 @@ fi
 #export CGO_LDFLAGS="/home/vcap/app/native/lib/librocksdb.so"
 
 export CGO_CFLAGS="-I/tmp/app/include"
-export CGO_LDFLAGS="-L/tmp/app/native/lib"
-export LD_LIBRARY_PATH="/tmp/app/native/lib"
+export CGO_LDFLAGS="-L/tmp/app/native/lib -L/home/vcap/app/native/lib"
+#export LD_LIBRARY_PATH="/tmp/app/native/lib"
 #export CGO_LDFLAGS="-l/tmp/app/native/lib/librocksdb.so -l/tmp/app/native/lib/libstdc++.so.6 -l/tmp/app/native/lib/libm.so -l/tmp/app/native/lib/libz.so -l/tmp/app/native/lib/libbz2.so -l/tmp/app/native/lib/libsnappy.so"
 
 if test -f "$build/Godeps/Godeps.json"
