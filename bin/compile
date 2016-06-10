@@ -294,10 +294,10 @@ case $TOOL in
               warn ""
             fi
             massagePkgSpecForVendor
-            step "Running: go install -v ${FLAGS[@]} ${pkgs}"
+            step "Running1: go install -v ${FLAGS[@]} ${pkgs}"
             go install -v "${FLAGS[@]}" ${pkgs} 2>&1
         else
-            step "Running: godep go install -v ${FLAGS[@]} ${pkgs}"
+            step "Running2: godep go install -v ${FLAGS[@]} ${pkgs}"
             godep go install -v "${FLAGS[@]}" ${pkgs} 2>&1
         fi
     ;;
@@ -344,7 +344,7 @@ case $TOOL in
 
         unset GIT_DIR # unset git dir or it will mess with goinstall
         cd $p
-        step "Running: go install -v ${FLAGS[@]} ${pkgs}"
+        step "Running3: go install -v ${FLAGS[@]} ${pkgs}"
         go install -v "${FLAGS[@]}" ${pkgs} 2>&1
     ;;
 # GB installation currently unsupported
