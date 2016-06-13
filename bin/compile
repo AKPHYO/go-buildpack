@@ -343,6 +343,8 @@ case $TOOL in
         ls -l $build/include/rocksdb
         ls -l $build/native/lib
         
+        ln -s /tmp/app/native/lib/librocksdb.so.4.1 /usr/lib/librocksdb.so
+        ln -s /home/vcap/app/native/lib/librocksdb.so.4.1 /usr/lib/librocksdb.so
         
         echo "Aung - Done"
 
