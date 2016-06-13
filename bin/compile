@@ -376,9 +376,10 @@ rm -rf $build/.heroku
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
 echo 'LD_LIBRARY_PATH=$Home' >> $build/.profile.d/go.sh
+echo 'cp $Home/app/native/lib/* $Home/app/bin' >> $build/.profile.d/go.sh
+echo 'cp $Home/app/native/lib/* $Home' >> $build/.profile.d/go.sh
 echo 'ls $Home/app' >> $build/.profile.d/go.sh
 echo 'ls $Home/app/native/lib' >> $build/.profile.d/go.sh
 echo 'ls $Home/app/include' >> $build/.profile.d/go.sh
-echo 'cp $Home/app/native/lib/* $Home/app/bin' >> $build/.profile.d/go.sh
-echo 'cp $Home/app/native/lib/* $Home' >> $build/.profile.d/go.sh
+echo 'ls $Home/app/bin' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
