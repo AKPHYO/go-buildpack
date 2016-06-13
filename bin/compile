@@ -387,4 +387,12 @@ rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
+echo 'echo Aung_CGO_CFLAGS' >> $build/.profile.d/go.sh
+echo 'echo $CGO_CFLAGS' >> $build/.profile.d/go.sh
+echo 'echo Aung_CGO_LDFLAGS' >> $build/.profile.d/go.sh
+echo 'echo $CGO_LDFLAGS' >> $build/.profile.d/go.sh
+echo 'echo Aung_LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
+echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
+echo 'export LD_LIBRARY_PATH=/home/vcap/lib' >> $build/.profile.d/go.sh
+echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
