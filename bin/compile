@@ -390,14 +390,12 @@ echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
 echo 'echo Aung_CGO_CFLAGS' >> $build/.profile.d/go.sh
 echo 'echo $CGO_CFLAGS' >> $build/.profile.d/go.sh
 echo 'echo Aung_CGO_LDFLAGS' >> $build/.profile.d/go.sh
-echo 'export CGO_LDFLAGS=-L/home/vcap/lib' >> $build/.profile.d/go.sh
+echo 'export CGO_LDFLAGS=-L/home/vcap/app/lib' >> $build/.profile.d/go.sh
 echo 'echo $CGO_LDFLAGS' >> $build/.profile.d/go.sh
 echo 'echo Aung_LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
-echo 'export LD_LIBRARY_PATH=/home/vcap/lib' >> $build/.profile.d/go.sh
+echo 'export LD_LIBRARY_PATH=/home/vcap/app/lib' >> $build/.profile.d/go.sh
 echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'echo Aung_LS' >> $build/.profile.d/go.sh
-echo 'ls -l /home/vcap/app' >> $build/.profile.d/go.sh
-echo 'echo Aung_LS' >> $build/.profile.d/go.sh
-echo 'ls -l /home/vcap/lib' >> $build/.profile.d/go.sh
+echo 'ls -l /home/vcap/app/lib' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
