@@ -153,13 +153,15 @@ fi
 
 #export CGO_CFLAGS="/home/vcap/app/include"
 #export CGO_LDFLAGS="/home/vcap/app/native/lib/librocksdb.so"
-
-export CGO_CFLAGS="-I/tmp/app/include"
 #export CGO_LDFLAGS="-L/tmp/app/native/lib -L/home/vcap/app/native/lib"
 #export CGO_LDFLAGS="CGO_LDFLAGS:-lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/vcap/app/native/lib"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/tmp/app/native/lib"
-export CGO_LDFLAGS="-L/home/vcap/app/native/lib -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
+
+export LD_LIBRARY_PATH=/home/vcap/app/native/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/tmp/app/native/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/vcap/app/bin:$LD_LIBRARY_PATH
+
+export CGO_CFLAGS=-I/tmp/app/include
+export CGO_LDFLAGS=-lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy
 
 if test -f "$build/Godeps/Godeps.json"
 then
@@ -343,8 +345,7 @@ case $TOOL in
         ls -l $build/include/rocksdb
         ls -l $build/native/lib
         
-        ln -s /tmp/app/native/lib/librocksdb.so.4.1 /usr/lib/librocksdb.so
-        ln -s /home/vcap/app/native/lib/librocksdb.so.4.1 /usr/lib/librocksdb.so
+        ln -s /home/vcap/app/native/lib/librocksdb.so.4.1 /home/vcap/app/bin/librocksdb.so"
         
         echo "Aung - Done"
 
