@@ -379,11 +379,17 @@ echo 'LD_LIBRARY_PATH=$Home' >> $build/.profile.d/go.sh
 echo 'echo Aung_Copy' >> $build/.profile.d/go.sh
 echo 'cp $Home/app/native/lib/* $Home/app/bin' >> $build/.profile.d/go.sh
 echo 'echo Aung_1' >> $build/.profile.d/go.sh
-echo 'ls $Home/app' >> $build/.profile.d/go.sh
+echo 'ls $Home' >> $build/.profile.d/go.sh
 echo 'echo Aung_2' >> $build/.profile.d/go.sh
 echo 'ls $Home/app/native/lib' >> $build/.profile.d/go.sh
 echo 'echo Aung_3' >> $build/.profile.d/go.sh
 echo 'ls $Home/app/include' >> $build/.profile.d/go.sh
 echo 'echo Aung_4' >> $build/.profile.d/go.sh
 echo 'ls $Home/app/bin' >> $build/.profile.d/go.sh
+echo 'echo Aung_5' >> $build/.profile.d/go.sh
+echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
+echo 'echo Aung_6' >> $build/.profile.d/go.sh
+echo 'echo $CGO_LDFLAGS' >> $build/.profile.d/go.sh
+echo 'echo Aung_7' >> $build/.profile.d/go.sh
+echo 'echo $CGO_CFLAGS' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
