@@ -156,9 +156,9 @@ fi
 #export CGO_LDFLAGS="-L/tmp/app/native/lib -L/home/vcap/app/native/lib"
 #export CGO_LDFLAGS="CGO_LDFLAGS:-lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
-export LD_LIBRARY_PATH=/home/vcap/app/native/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/tmp/app/native/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/home/vcap/app/bin:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/home/vcap/app/native/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/tmp/app/native/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/home/vcap/app/bin:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/vcap:$LD_LIBRARY_PATH
 
 export CGO_CFLAGS="-I/tmp/app/include"
