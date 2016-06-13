@@ -352,13 +352,13 @@ case $TOOL in
         
         #cp /tmp/app/native/lib/* /home/vcap
         
-        mkdir /home/vcap/include
-        cp /tmp/app/include/* /home/vcap/include
+        #mkdir /home/vcap/include
+        #/cp /tmp/app/include/* /home/vcap/include
         
         mkdir /home/vcap/lib
         cp /tmp/app/lib/* /home/vcap/lib
         
-        ls -l /home/vcap/include
+        #ls -l /home/vcap/include
         ls -l /home/vcap/lib
         
         #ls -l /home/vcap
