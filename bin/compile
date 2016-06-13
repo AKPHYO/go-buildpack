@@ -387,6 +387,7 @@ echo 'ls $Home/app/include' >> $build/.profile.d/go.sh
 echo 'echo Aung_4' >> $build/.profile.d/go.sh
 echo 'ls $Home/app/bin' >> $build/.profile.d/go.sh
 echo 'echo Aung_5' >> $build/.profile.d/go.sh
+echo 'export LD_LIBRARY_PATH=$Home' >> $build/.profile.d/go.sh
 echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'echo Aung_6' >> $build/.profile.d/go.sh
 echo 'echo $CGO_LDFLAGS' >> $build/.profile.d/go.sh
