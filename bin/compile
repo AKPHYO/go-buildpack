@@ -159,11 +159,11 @@ fi
 #export LD_LIBRARY_PATH=/home/vcap/app/native/lib:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH=/tmp/app/native/lib:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH=/home/vcap/app/bin:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/home/vcap
-export LIBRARY_PATH=/home/vcap
+#export LD_LIBRARY_PATH=/home/vcap
+#export LIBRARY_PATH=/home/vcap
 
-export CGO_CFLAGS="-I/tmp/app/include"
-export CGO_LDFLAGS="-L/home/vcap -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
+#export CGO_CFLAGS="-I/tmp/app/include"
+#export CGO_LDFLAGS="-L/home/vcap -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
 if test -f "$build/Godeps/Godeps.json"
 then
@@ -343,13 +343,22 @@ case $TOOL in
         esac
         
         echo "Aung - NativeVendoring"
-        ls -l $build
-        ls -l $build/include/rocksdb
-        ls -l $build/native/lib
+        #ls -l $build
+        #ls -l $build/include/rocksdb
+        #ls -l $build/native/lib
         
-        cp /tmp/app/native/lib/* /home/vcap
+        #cp /tmp/app/native/lib/* /home/vcap
         
-        ls -l /home/vcap
+        mkdir /home/vcap/include
+        cp /tmp/app/include/* /home/vcap/include
+        
+        mkdir /home/vcap/lib
+        cp /tmp/app/lib/* /home/vcap/lib
+        
+        ls -l /home/vcap/include
+        ls -l /home/vcap/lib
+        
+        #ls -l /home/vcap
         
         echo "Aung - Done"
 
@@ -375,22 +384,4 @@ rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
-echo 'LD_LIBRARY_PATH=$Home' >> $build/.profile.d/go.sh
-echo 'echo Aung_Copy' >> $build/.profile.d/go.sh
-echo 'cp $Home/app/native/lib/* $Home/app/bin' >> $build/.profile.d/go.sh
-echo 'echo Aung_1' >> $build/.profile.d/go.sh
-echo 'ls $Home' >> $build/.profile.d/go.sh
-echo 'echo Aung_2' >> $build/.profile.d/go.sh
-echo 'ls $Home/app/native/lib' >> $build/.profile.d/go.sh
-echo 'echo Aung_3' >> $build/.profile.d/go.sh
-echo 'ls $Home/app/include' >> $build/.profile.d/go.sh
-echo 'echo Aung_4' >> $build/.profile.d/go.sh
-echo 'ls $Home/app/bin' >> $build/.profile.d/go.sh
-echo 'echo Aung_5' >> $build/.profile.d/go.sh
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$Home' >> $build/.profile.d/go.sh
-echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
-echo 'echo Aung_6' >> $build/.profile.d/go.sh
-echo 'echo $CGO_LDFLAGS' >> $build/.profile.d/go.sh
-echo 'echo Aung_7' >> $build/.profile.d/go.sh
-echo 'echo $CGO_CFLAGS' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
