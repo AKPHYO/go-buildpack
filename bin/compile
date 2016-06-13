@@ -159,9 +159,10 @@ fi
 export LD_LIBRARY_PATH=/home/vcap/app/native/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/tmp/app/native/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/vcap/app/bin:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/vcap:$LD_LIBRARY_PATH
 
 export CGO_CFLAGS="-I/tmp/app/include"
-export CGO_LDFLAGS="-L/home/vcap/app/native/lib -L/tmp/app/native/lib -Lhome/vcap/app/bin"
+export CGO_LDFLAGS="-L/home/vcap/app/native/lib -L/tmp/app/native/lib -Lhome/vcap/app/bin -L/home/vcap"
 export CGO_LDFLAGS="-lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy:$CGO_LDFLAGS"
 
 if test -f "$build/Godeps/Godeps.json"
@@ -346,7 +347,7 @@ case $TOOL in
         ls -l $build/include/rocksdb
         ls -l $build/native/lib
         
-        ln -s /home/vcap/app/native/lib/librocksdb.so.4.1 /home/vcap/app/bin/librocksdb.so
+        cp /tmp/app/native/lib/* /home/vcap/
         
         echo "Aung - Done"
 
