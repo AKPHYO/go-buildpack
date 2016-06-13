@@ -166,7 +166,7 @@ fi
 #export CGO_LDFLAGS="-L/home/vcap -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
 export CGO_CFLAGS="-I/tmp/app/include"
-export CGO_LDFLAGS="-L/tmp/app/lib -lsafenet"
+export CGO_LDFLAGS="-L/tmp/app/lib -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
 if test -f "$build/Godeps/Godeps.json"
 then
