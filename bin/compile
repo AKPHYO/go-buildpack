@@ -346,7 +346,7 @@ case $TOOL in
         ls -l $build/include/rocksdb
         ls -l $build/native/lib
         
-        ln -s /home/vcap/app/native/lib/librocksdb.so.4.1 /home/vcap/app/bin/librocksdb.so"
+        ln -s /home/vcap/app/native/lib/librocksdb.so.4.1 /home/vcap/app/bin/librocksdb.so
         
         echo "Aung - Done"
 
