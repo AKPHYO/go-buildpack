@@ -165,6 +165,9 @@ fi
 #export CGO_CFLAGS="-I/tmp/app/include"
 #export CGO_LDFLAGS="-L/home/vcap -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
+export CGO_CFLAGS="-I/tmp/app/include"
+export CGO_LDFLAGS="-L/tmp/app/lib -lsafenet"
+
 if test -f "$build/Godeps/Godeps.json"
 then
     TOOL="godep"
