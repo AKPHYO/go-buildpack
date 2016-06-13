@@ -160,7 +160,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/vcap/app/native/lib"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/tmp/app/native/lib"
 echo "Aung Khaing Phyo"
 echo "$LD_LIBRARY_PATH"
-#export CGO_LDFLAGS="-l/tmp/app/native/lib/librocksdb.so -l/tmp/app/native/lib/libstdc++.so.6 -l/tmp/app/native/lib/libm.so -l/tmp/app/native/lib/libz.so -l/tmp/app/native/lib/libbz2.so -l/tmp/app/native/lib/libsnappy.so"
+export CGO_LDFLAGS="$LD_LIBRARY_PATH:-l/tmp/app/native/lib/librocksdb.so -l/tmp/app/native/lib/libstdc++.so.6 -l/tmp/app/native/lib/libm.so -l/tmp/app/native/lib/libz.so -l/tmp/app/native/lib/libbz2.so -l/tmp/app/native/lib/libsnappy.so"
 
 if test -f "$build/Godeps/Godeps.json"
 then
