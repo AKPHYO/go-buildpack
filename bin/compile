@@ -400,5 +400,6 @@ echo 'echo Aung_LS' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/lib' >> $build/.profile.d/go.sh
 echo 'echo Aung_Copy' >> $build/.profile.d/go.sh
 echo 'cp /home/vcap/app/core.yaml /home/vcap/app/bin' >> $build/.profile.d/go.sh
+echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/bin' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
