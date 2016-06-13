@@ -397,5 +397,7 @@ echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'export LD_LIBRARY_PATH=/home/vcap/lib' >> $build/.profile.d/go.sh
 echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'echo Aung_LS' >> $build/.profile.d/go.sh
+echo 'ls -l /home/vcap/app' >> $build/.profile.d/go.sh
+echo 'echo Aung_LS' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/lib' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
