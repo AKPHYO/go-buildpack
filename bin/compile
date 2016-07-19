@@ -151,8 +151,8 @@ then
     done
 fi
 
-export CGO_CFLAGS="-I/tmp/app/include"
-export CGO_LDFLAGS="-L/tmp/app/lib -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
+export CGO_CFLAGS="-I/tmp/staged/app/include"
+export CGO_LDFLAGS="-L/tmp/staged/app/lib -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy"
 
 if test -f "$build/Godeps/Godeps.json"
 then
@@ -331,17 +331,17 @@ case $TOOL in
         ;;
         esac
         
-        if [ -d "/tmp/app/lib" ]; then
+        #if [ -d "/tmp/app/lib" ]; then
             # Control will enter here if $DIRECTORY exists.
-            echo "Aung - NativeVendoring"
+            #echo "Aung - NativeVendoring"
         
-            mkdir /home/vcap/lib
-            cp /tmp/app/lib/* /home/vcap/lib
+            #mkdir /home/vcap/lib
+            #cp /tmp/app/lib/* /home/vcap/lib
         
-            ls -l /home/vcap/lib
+            #ls -l /home/vcap/lib
         
-            echo "Aung - Done"
-        fi
+            #echo "Aung - Done"
+        #fi
         
         unset GIT_DIR # unset git dir or it will mess with goinstall
         cd $p
@@ -377,9 +377,12 @@ echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'echo Aung_LS' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/lib' >> $build/.profile.d/go.sh
 echo 'echo Aung_Copy' >> $build/.profile.d/go.sh
-echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
+#echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
+echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/membersrvc/membersrvc' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/bin' >> $build/.profile.d/go.sh
 echo 'echo Aung_LS_Peer' >> $build/.profile.d/go.sh
-echo 'ls -l /home/vcap/app/peer' >> $build/.profile.d/go.sh
-echo 'cd /home/vcap/app/peer' >> $build/.profile.d/go.sh
+#echo 'ls -l /home/vcap/app/peer' >> $build/.profile.d/go.sh
+echo 'ls -l /home/vcap/app/membersrvc' >> $build/.profile.d/go.sh
+#echo 'cd /home/vcap/app/peer' >> $build/.profile.d/go.sh
+echo 'cd /home/vcap/app/membersrvc' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
