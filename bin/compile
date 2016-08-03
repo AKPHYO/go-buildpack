@@ -378,11 +378,11 @@ echo 'echo Aung_LS' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/lib' >> $build/.profile.d/go.sh
 echo 'echo Aung_Copy' >> $build/.profile.d/go.sh
 #echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
-echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/membersrvc/membersrvc' >> $build/.profile.d/go.sh
+echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/build/bin/peer' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/bin' >> $build/.profile.d/go.sh
 echo 'echo Aung_LS_Peer' >> $build/.profile.d/go.sh
 #echo 'ls -l /home/vcap/app/peer' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/membersrvc' >> $build/.profile.d/go.sh
 #echo 'cd /home/vcap/app/peer' >> $build/.profile.d/go.sh
-echo 'cd /home/vcap/app/membersrvc' >> $build/.profile.d/go.sh
+echo 'cd /home/vcap/app/build/bin' >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
