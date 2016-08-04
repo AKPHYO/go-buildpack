@@ -369,7 +369,7 @@ echo 'echo Aung_CGO_CFLAGS' >> $build/.profile.d/go.sh
 echo 'echo $CGO_CFLAGS' >> $build/.profile.d/go.sh
 echo 'echo Aung_CGO_LDFLAGS' >> $build/.profile.d/go.sh
 echo 'export CGO_LDFLAGS=-L/home/vcap/app/lib' >> $build/.profile.d/go.sh
-echo 'export PEER_CFG_PATH=/home/vcap/app/peer/core.yaml'
+echo 'export PEER_CFG_PATH=/home/vcap/app/peer/core.yaml' >> $build/.profile.d/go.sh
 echo 'echo $CGO_LDFLAGS' >> $build/.profile.d/go.sh
 echo 'echo Aung_LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
 echo 'echo $LD_LIBRARY_PATH' >> $build/.profile.d/go.sh
@@ -379,7 +379,7 @@ echo 'echo Aung_LS' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/lib' >> $build/.profile.d/go.sh
 echo 'echo Aung_Copy' >> $build/.profile.d/go.sh
 #echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
-echo 'cp /home/vcap/app/bin/peer /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
+echo 'cp /home/vcap/app/bin/fabric /home/vcap/app/peer/peer' >> $build/.profile.d/go.sh
 echo 'ls -l /home/vcap/app/bin' >> $build/.profile.d/go.sh
 echo 'echo Aung_LS_Peer' >> $build/.profile.d/go.sh
 #echo 'ls -l /home/vcap/app/peer' >> $build/.profile.d/go.sh
